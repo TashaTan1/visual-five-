@@ -7,12 +7,9 @@
 *
 ***************************************************************************************/
 
-//click mouse to start
-//what you hear is the first draft of a song
-//another version is here: https://soundcloud.com/sophia-wood-977228849
-
+//variables
 let five;
-let sArray = []; //array of dancing circles
+let sArray = []; 
 let spectrum;
 let waves;
 let fft;
@@ -23,13 +20,13 @@ let button;
 
 function preload() {
   userStartAudio();
-  five = loadSound("FIVE.mp3"); //super rough piano doodle
+  five = loadSound("FIVE.mp3"); 
 }
 function setup() {
   sArray = [];
   createCanvas(windowWidth, windowHeight);
-  five.amp(0.7); //how loud?
-  fft = new p5.FFT(); //creates sound array analyze
+  five.amp(0.7); 
+  fft = new p5.FFT(); 
   spectrum = fft.analyze();
   for (let i = 0; i < spectrum.length; i++) {
     sArray.push(new dots(i));
@@ -39,7 +36,7 @@ function setup() {
 
 function draw() {
   translate(width / 2, height / 2);
-  //rotate(frameCount / 1000);
+ 
 
   t += 0.001;
   if (!five.isPlaying()) {
@@ -48,9 +45,9 @@ function draw() {
 
   background(0, 0, 9, 20);
   soundProcess();
-
+//timer
   if (frameCount % 60 == 0 && timer > 0) {
-    // if the frameCount is divisible by 60, then a second has passed. it will stop at 0
+    
     timer--;
   }
   //  console.log(timer);
@@ -65,7 +62,7 @@ function draw() {
     button.position(425, height/2);
     button.mousePressed(function goToAnotherPage() {
       window.location.href =
-        "https://editor.p5js.org/natashatan/sketches/gxSMDJpDT";
+        "https://tashatan1.github.io/let-s-breath/";
     });
   }
 }
@@ -77,7 +74,7 @@ function soundProcess() {
     sArray[i].display(spectrum[i] / 10, waves[i]);
   }
 }
-
+//animation for visual
 class dots {
   constructor(i) {
     this.i = i;
