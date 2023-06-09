@@ -53,13 +53,13 @@ function draw() {
   //  console.log(timer);
   if (timer == 0) {
     button = createButton("Carry on Listening");
-    button.position(200, height/2);
+    button.position(width/2 -200, height/2);
     button.mousePressed(function goToAnotherPage() {
       window.location.href =
         "https://tashatan1.github.io/visual-five-/";
     });
     button = createButton("Let's Breath");
-    button.position(425, height/2);
+    button.position(width/2 +80, height/2);
     button.mousePressed(function goToAnotherPage() {
       window.location.href =
         "https://tashatan1.github.io/let-s-breath/";
