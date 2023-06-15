@@ -52,14 +52,14 @@ function draw() {
   }
   //  console.log(timer);
   if (timer == 0) {
-    button = createButton("Carry on Listening");
-    button.position((width/2) -200, height/2);
+    button = createButton("Back to frequencies");
+    button.position(1, 1);
     button.mousePressed(function goToAnotherPage() {
       window.location.href =
-        "https://tashatan1.github.io/visual-five-/";
+        "https://tashatan1.github.io/front-page-/";
     });
     button = createButton("Let's Breath");
-    button.position((width/2) +80, height/2);
+    button.position(1350, 1);
     button.mousePressed(function goToAnotherPage() {
       window.location.href =
         "https://tashatan1.github.io/let-s-breath/";
